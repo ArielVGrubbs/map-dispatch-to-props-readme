@@ -27,4 +27,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increaseCount: () => dispatch({ type: 'INCREASE_COUNT' })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
